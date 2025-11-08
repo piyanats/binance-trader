@@ -33,7 +33,28 @@ A Python-based automated trading bot for Binance Thailand that uses MACD and RSI
 - Binance Thailand account with API access
 - Slack workspace with incoming webhook
 
-### Setup
+### Quick Setup (Recommended)
+
+Use the automated setup script with uv package manager for faster installation:
+
+**Linux/Mac:**
+```bash
+./setup.sh
+```
+
+**Windows:**
+```bash
+setup.bat
+```
+
+The script will:
+- Create a virtual environment
+- Install uv package manager (if not installed)
+- Install all dependencies using uv
+- Create `.env` file from template
+- Initialize portfolio data files
+
+### Manual Setup
 
 1. Clone the repository:
 ```bash
@@ -48,6 +69,14 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. Install dependencies:
+
+**Using uv (recommended - faster):**
+```bash
+pip install uv
+uv pip install -r requirements.txt
+```
+
+**Using pip:**
 ```bash
 pip install -r requirements.txt
 ```

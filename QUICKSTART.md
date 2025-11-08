@@ -1,17 +1,58 @@
 # Quick Start Guide
 
-## Step 1: Install Dependencies
+## Automated Setup (Easiest!)
 
+**Linux/Mac:**
+```bash
+./setup.sh
+```
+
+**Windows:**
+```bash
+setup.bat
+```
+
+This will automatically:
+- Create virtual environment
+- Install uv package manager
+- Install all dependencies
+- Create .env file
+- Initialize portfolio
+
+Then skip to **Step 2** to configure your API keys!
+
+---
+
+## Manual Setup
+
+### Step 1: Install Dependencies
+
+**Using automated setup with uv (recommended):**
+```bash
+# Linux/Mac
+./setup.sh
+
+# Windows
+setup.bat
+```
+
+**Manual installation:**
 ```bash
 # Create virtual environment (optional but recommended)
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-# Install required packages
+# Install uv for faster package installation
+pip install uv
+
+# Install required packages with uv (faster)
+uv pip install -r requirements.txt
+
+# Or use regular pip
 pip install -r requirements.txt
 ```
 
-## Step 2: Configure Environment
+### Step 2: Configure Environment
 
 ```bash
 # Copy example environment file
@@ -26,7 +67,7 @@ Required configuration:
 - `BINANCE_API_SECRET`: Your Binance Thailand API secret
 - `SLACK_WEBHOOK_URL`: Your Slack incoming webhook URL
 
-## Step 3: Initialize Portfolio
+### Step 3: Initialize Portfolio
 
 ```bash
 # Create initial portfolio files
@@ -37,7 +78,7 @@ This creates:
 - `data/portfolio.json`: Your portfolio holdings
 - `data/history.json`: Transaction history
 
-## Step 4: Test Connection
+### Step 4: Test Connection
 
 ```bash
 # Verify everything is configured correctly
@@ -50,7 +91,7 @@ This will test:
 - Slack notifications
 - Technical indicators
 
-## Step 5: Run the Bot
+### Step 5: Run the Bot
 
 ```bash
 # Start the trading bot
